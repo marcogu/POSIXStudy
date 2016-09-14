@@ -46,7 +46,7 @@ void *alarm_thread(void* arg)
 		/*
 		If the alarm list is empty, wait for one second. This
 		allows the main thread to run, and read anther command. 
-		If the list not empty, rmeove the first item. Compute the 
+		If the list not empty, remove the first item. Compute the 
 		number of seconds to wait -- if the reuslt less than 0 
 		(the time has passed), then set the sleep_time to 0.
 		*/
