@@ -71,7 +71,8 @@ int main(int argc, char const *argv[])
 	assert(status == 0);
 
 	while(data.value == 0 ) {
-		status = pthread_cond_timedwait(&data.cond, &data.mutex, &timeout);
+		/* When in condition waiting, the thread will auto release mutex lock. */
+		status = pthread_cond_timedwait(&data.cond, &data.mutex, &timeout);  
 		if (status == ETIMEDOUT)
 		{
 			printf("Condition wait timed out. \n");
